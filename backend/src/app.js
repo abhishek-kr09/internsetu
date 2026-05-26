@@ -6,6 +6,7 @@ const listingRoutes = require('./routes/listingRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const applicationRoutes = require('./routes/applicationRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
+const matchesRoutes = require('./routes/matchesRoutes');
 
 const app = express();
 
@@ -30,5 +31,12 @@ app.use('/api/listings', listingRoutes);
 app.use('/api/profiles', profileRoutes);
 app.use('/api/applications', applicationRoutes);
 app.use('/api/dashboard', dashboardRoutes);
+app.use('/api/matches', matchesRoutes);
+
+app.use((err, req, res, next) => {
+  const status = err.statusCode || err.status || 500;
+  const message = err.message || 'Internal server error';
+  res.status(status).json({ message });
+});
 
 module.exports = app;

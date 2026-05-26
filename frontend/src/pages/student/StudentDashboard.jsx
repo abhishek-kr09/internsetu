@@ -116,8 +116,8 @@ const StudentDashboard = () => {
     <section className="space-y-7">
       <div className="grid gap-5 lg:grid-cols-[1.1fr_1fr]">
         <form onSubmit={handleResumeUpload} className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
-          <h3 className="font-display text-xl text-white">Resume Parser + AI Recommendations</h3>
-          <p className="mt-2 text-sm text-zinc-400">Choose previous resume or upload a new PDF. Only 50%+ matches are shown.</p>
+          <h3 className="font-display text-xl text-white">Resume Parser</h3>
+          <p className="mt-2 text-sm text-zinc-400">Choose previous resume or upload a new PDF. Recommendations appear in Matched Internships.</p>
 
           <div className="mt-5 flex gap-2 rounded-xl border border-zinc-800 bg-black p-1">
             <button
@@ -170,7 +170,7 @@ const StudentDashboard = () => {
                     onClick={handleReparseFromProfile}
                     className="rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-black"
                   >
-                    Parse & Rank
+                    Parse resume
                   </button>
                 </>
               ) : null}
@@ -184,7 +184,7 @@ const StudentDashboard = () => {
                 onChange={(event) => setResumeFile(event.target.files?.[0] || null)}
               />
               <button className="mt-4 rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-black">
-                Parse & Rank
+                Upload & Parse
               </button>
             </>
           )}

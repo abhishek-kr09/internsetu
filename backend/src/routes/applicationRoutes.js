@@ -5,7 +5,7 @@ const {
 	getRecruiterApplications,
 	updateApplicationStatus,
 	withdrawApplication,
-} = require('../controllers/user.controller');
+} = require('../controllers/application.controller');
 const { authMiddleware, authorizeRoles } = require('../middlewares/auth.middleware');
 
 const router = express.Router();

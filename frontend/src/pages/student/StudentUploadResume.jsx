@@ -42,7 +42,7 @@ const StudentUploadResume = () => {
   return (
     <section className="rounded-3xl border border-zinc-800 bg-zinc-950 p-6 sm:p-8">
       <h2 className="font-display text-2xl text-white">Upload a New Resume</h2>
-      <p className="mt-2 text-sm text-zinc-400">Upload a PDF to generate fresh recommendations.</p>
+      <p className="mt-2 text-sm text-zinc-400">Upload a PDF to parse it and update your resume library.</p>
 
       <form onSubmit={handleResumeUpload} className="mt-6 space-y-4">
         <input
@@ -52,7 +52,7 @@ const StudentUploadResume = () => {
           onChange={(event) => setResumeFile(event.target.files?.[0] || null)}
         />
         <button className="rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-black">
-          Parse & Rank
+          Upload & Parse
         </button>
       </form>
 

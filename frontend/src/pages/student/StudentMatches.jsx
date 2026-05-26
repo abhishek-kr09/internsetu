@@ -91,7 +91,7 @@ const StudentMatches = () => {
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <h2 className="font-display text-2xl text-white">Matched Internships</h2>
-            <p className="mt-2 text-sm text-zinc-400">Pick a previous resume and refresh your AI matches.</p>
+            <p className="mt-2 text-sm text-zinc-400">Pick a previous resume and rank your AI matches.</p>
           </div>
           <Link
             to="/student/resumes"
@@ -128,9 +128,10 @@ const StudentMatches = () => {
               <button
                 type="button"
                 onClick={handleReparseFromProfile}
-                className="w-fit rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-black"
+                disabled={!selectedUpload}
+                className="w-fit rounded-xl bg-white px-5 py-2.5 text-sm font-semibold text-black disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Parse & Rank
+                Rank matches
               </button>
             </>
           ) : null}

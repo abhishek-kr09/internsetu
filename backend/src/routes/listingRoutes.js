@@ -1,5 +1,5 @@
 const express = require('express');
-const { createListing, getListings, getPublicListings, getListingById } = require('../controllers/user.controller');
+const { createListing, getListings, getPublicListings, getListingById } = require('../controllers/listing.controller');
 const { authMiddleware, authorizeRoles } = require('../middlewares/auth.middleware');
 
 const router = express.Router();

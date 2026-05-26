@@ -21,11 +21,16 @@ export const AuthProvider = ({ children }) => {
       const data = await apiRequest('/api/auth/me', { headers });
       setUser(data.user);
       setStatus(`Welcome back, ${data.user.name}`);
-    } catch {
-      localStorage.removeItem('token');
-      setToken('');
-      setUser(null);
-      setStatus('Session expired. Please login again.');
+    } catch (error) {
+      if (error?.status === 401) {
+        localStorage.removeItem('token');
+        setToken('');
+        setUser(null);
+        setStatus('Session expired. Please login again.');
+        return;
+      }
+
+      setStatus('Unable to restore session. Please retry.');
     } finally {
       setIsAuthReady(true);
     }
